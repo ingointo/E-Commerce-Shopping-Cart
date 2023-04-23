@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="/stylesheets/mdb-links.css">
+<link rel="stylesheet" href="/stylesheets/login.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js" defer></script>
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid"
+          alt="Phone image">
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1 text-black font">
+        <form action="/admin/signup" method="post">
+          <div class="d-flex flex-row align-items-center mb-4">
+            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+            <div class="form-outline flex-fill mb-0">
+              <input type="text" id="form3Example1c" class="form-control form" name="Admin_Name" />
+              <label class="form-label" for="form3Example1c">Your Name</label>
+            </div>
+          </div>
+          <div class="d-flex flex-row align-items-center mb-4">
+            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+            <div class="form-outline flex-fill mb-0">
+              <input type="email" id="form3Example3c" class="form-control" name="Admin_Email" />
+              <label class="form-label" for="form3Example3c">Your Email</label>
+            </div>
+          </div>
+
+          <!-- Password input -->
+          <div class="d-flex flex-row align-items-center mb-4">
+            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+            <div class="form-outline flex-fill mb-0">
+              <input type="password" id="form3Example4c" class="form-control" name="Password" />
+              <label class="form-label" for="form3Example4c">Password</label>
+            </div>
+          </div>
+
+
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+
+          <div class="divider d-flex align-items-center my-4">
+            <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+          </div>
+
+          <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!" role="button">
+            <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
+          </a>
+          <a class="btn btn-primary btn-lg btn-block" style="background-color: #da0000" href="#!" role="button">
+            <i class="fab fa-google me-2 " style="color: #fdffff;"></i>Continue with Google</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

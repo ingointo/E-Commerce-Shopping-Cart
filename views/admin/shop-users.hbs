@@ -1,0 +1,33 @@
+<section class="mb-3" style="font-family: 'Courier New', Courier, monospace; font-weight: bold;">
+    <!-- A container div using bootstrap classes -->
+    <div class="container">
+        <!-- A Table to Display user details -->
+        <table class="table mt-5"> <!--you want to use search option or sorting you must include id='productsTable' -->
+            <thead> <!-- Table headers -->
+                <tr>
+                    <th scope="col">N o</th>
+                    <th scope="col">i d</th>
+                    <th scope="col">U s e r N a m e</th>
+                    <th scope="col">U s e r E m a i l</th>
+                </tr>
+            </thead>
+            <tbody> <!-- Table Body for added products and their information -->
+                {{#each users}} <!-- Helper that loops through every product-->
+                <tr> <!-- Product row to display information -->
+                    <th scope="row">{{@index}}</th> <!-- Index of each displayed product. -->
+                    <td>{{this._id}}</td> <!-- user id column. -->
+                    <td>{{this.User_Name}}</td> <!-- user Name column. -->
+                    <td>{{this.User_Email}}</td> <!-- user email column. -->
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>
+<!--user Table 
+<script>
+    $(document).ready(function () {
+        $('#productsTable').DataTable();
+    });
+</script>
+-->

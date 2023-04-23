@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="/stylesheets/admin-header.css">
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-5 mt-1 nav-col text-style">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="#">A d m i n P a n e l</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-bg-light rounded-5 px-1">
+                    <li class="nav-item rounded-5 nav-col mt-1 mb-1">
+                        <a class="nav-link active text-light" aria-current="page" href="/admin">Products</a>
+                    </li>
+                    <li class="nav-item nav-col rounded-5 mt-1 mb-1">
+                        <a class="nav-link text-light" href="/admin/user-orders">Orders</a>
+                    </li>
+                    <li class="nav-item nav-col rounded-5 mt-1 mb-1">
+                        <a class="nav-link text-light" href="/admin/shop-users">Users</a>
+                    </li>
+                </ul>
+                {{!-- {{#if isAdmin}}
+                <form class="d-flex mt-1 mb-1" role="search">
+                    <input class="form-control me-2 rounded-5" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-danger rounded-5 text-white" type="submit" id="productTables">Search</button>
+                </form>
+                {{/if}} --}}
+                <!-- A button dropdown for the user's account actions. -->
+                <div class="btn-group px-2">
+                    <!-- The dropdown button, with text "Account" if no user is logged in,
+                         or the user's isAdmin if they are logged in -->
+                    <button class="btn btn-info rounded-5 dropdown-toggle nav-col text-light" type="button"
+                        id="dropdownMenuButton1" data-bs-toggle="dropdown" data-bs-display="static"
+                        aria-expanded="false" aria-label="Dropdown menu">
+                        {{#if isAdmin}}
+                        {{isAdmin.Admin_Name}}
+                        {{else}}
+                        Account
+                        {{/if}}
+                    </button>
+                    <div class="mt-3 mx-1">
+                        <!-- The dropdown menu with options dependent on the user authentication status -->
+                        <ul class="dropdown-menu dropdown-menu-start rounded-5 dropdown-menu-lg-end dropdown-menu-dark border-3"
+                            aria-labelledby="dropdownMenuButton1">
+                            {{#if isAdmin}}
+                            <!-- Logout option if user is authenticated -->
+                            <li><a class="dropdown-item " href="/admin/logout">logout</a></li>
+                            {{else}}
+                            <!-- Login and Signup option if user is not authenticated -->
+                            <li><a class="dropdown-item " href="/admin/login">Login</a></li>
+                            {{!-- we can do that a admin can add admin eg: if one admin is login the page should add
+                            create admin link --}}
+                            {{!-- <li><a class="dropdown-item" href="/admin/signup">Create Admin</a></li> --}}
+                            {{/if}}
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,16 @@
+.viewProduct{
+    background: -webkit-linear-gradient(left, #3931af, #dfebef)
+}
+.card {
+    width: 20rem; height: 28rem;
+    
+}
+.card-img-top{
+    width: 100%; height: 15rem
+}
+.card-footer {
+    background-color:transparent; height: 50px;
+}
+.h4{
+    font-family: 'Courier New', Courier, monospace;
+}

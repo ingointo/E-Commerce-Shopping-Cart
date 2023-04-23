@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="/stylesheets/cart.css">
+<section>
+    <!-- A container div using bootstrap classes -->
+    <div class="container">
+        <!-- A Table to Display Products details -->
+        <table class="table mt-5">
+            <thead> <!-- Table headers -->
+                <tr>
+                    <th scope="col">I t e m s</th>
+                    <th scope="col">T i t l e</th>
+                    <th scope="col">Q u a n t i t y</th>
+                    <th scope="col">O p t i o n</th>
+                </tr>
+            </thead>
+            <tbody> <!-- Table Body for added products and their information -->
+                {{#each products}}<!-- Helper that loops through every product-->
+                <tr> <!-- Product row to display information -->
+                    <td><img style="width: 50px; height:50px;" src="/product-images/{{this.product._id}}.jpg" alt="">
+                    </td>
+                    <!-- Product Name column. -->
+                    <td>{{this.product.Product_Brand}}</td><!-- Product Category column. -->
+
+                    <td><button class="cart-item-count btn btn-outline-danger"
+                            onclick="changeQuantity('{{this._id}}', '{{this.product._id}}','{{../user}}',-1)"><i
+                                class="bi bi-dash" title="Decrease Quantity"></i></i></button>
+                        <span class="badge bg-info" id="{{this.product._id}}">{{this.quantity}}</span>
+                        <button class="cart-item-count btn btn-outline-success"
+                            onclick="changeQuantity('{{this._id}}', '{{this.product._id}}','{{../user}}',1)"><i
+                                class="bi bi-plus-lg" title="Increase Quantity"></i></button>
+
+                    </td> <!-- Product Description column. -->
+
+                    <td><button class="btn btn-outline-danger"
+                            onclick="deleteProduct('{{this._id}}', '{{this.product._id}}','{{../user}}')"><i
+                                class="bi bi-trash-fill"></i></button></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+        {{#if cartCount}}
+        <div class="float-end " style="font-family: 'Courier New', Courier, monospace;">
+            <h3 class="fw-semibold">TOTAL ₹ <span id="total">{{totalValue}}</span></h3>
+            <a href="/place-order" class="btn btn-primary w-100"> Place Order </a>
+        </div>
+        {{/if}}
+
+    </div>
+</section>

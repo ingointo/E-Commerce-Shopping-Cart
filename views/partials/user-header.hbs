@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="/stylesheets/user-header.css">
+<header>
+    <!-- Creates a navigation menu with the class `navbar` that is fixed to the top. -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary my-1 text-style nav-col rounded-3">
+
+        <div class="container-fluid ">
+            <!-- A link to the homepage with the text "S h o p p i n G C a r t" -->
+            <a class="navbar-brand text-light"   href="#">S h o p p i n g C a r t</a>
+
+         <!-- Creates a button that toggles when the screen is collapsed or expanded, 
+                 with an icon indicating the collapse and expand state -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> 
+           
+            <!-- Contains navigation links and user account information  -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Unordered list of navigation links, which are centered-->
+                <ul class="navbar-nav me-auto mb-3 mt-3 text-bg-light rounded-3">
+                    <li class="nav-item rounded-3 nav-col mx-2 mt-2 mb-2 ">
+                        <!-- Link to the Products page, highlighted as active when on the current page -->
+                        <a class="nav-link text-light " aria-current="page" href="/">Products</a>
+                    </li>
+                    <li class="nav-item nav-col rounded-3 mx-2 mt-2 mb-2">
+                        <!-- Link to the Cart page -->
+                        <a class="nav-link position-relative text-light"  href="/cart"><i class="bi bi-cart"></i>
+                            Cart
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success" id="cart-count">
+                                {{cartCount}} 
+                                </span></a>
+
+                        </span>
+                    </li>
+                    {{#if user}}
+                    <li class="nav-item rounded-3 nav-col mx-2 mt-2 mb-2">
+                        <!-- Link to the Orders page -->
+                        <a class="nav-link text-light" href="/orders">Orders</a>
+                    </li>
+                    {{/if}}
+                </ul>
+
+                <!-- A button dropdown for the user's account actions. -->
+                <div class="btn-group">
+                    <!-- The dropdown button, with text "Account" if no user is logged in,
+                         or the user's username if they are logged in -->
+                    <button class="btn nav-col text-white rounded-5 dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Dropdown menu">
+                        {{#if user}}
+                        {{user.User_Name}}
+                        {{else}}
+                        Account
+                        {{/if}}
+                    </button>
+                    <!-- The dropdown menu with options dependent on the user authentication status -->
+                    <ul class="dropdown-menu dropdown-menu-start rounded-5 dropdown-menu-lg-end dropdown-menu-dark border-3"
+                        aria-labelledby="dropdownMenuButton1">
+                        {{#if user}}
+                        <!-- Logout option if user is authenticated -->
+                        <li><a class="dropdown-item " href="/logout">logout</a></li>
+                        {{else}}
+                        <!-- Login and Signup option if user is not authenticated -->
+                        <li><a class="dropdown-item " href="/login">Login</a></li>
+                        <li><a class="dropdown-item" href="/signup">SignUP</a></li>
+                        {{/if}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

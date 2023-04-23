@@ -1,0 +1,33 @@
+{{!-- Product listing section only in hbs --}}
+<link rel="stylesheet" href="/stylesheets/view-product.css">
+<section class="viewProduct">
+    <div class="container">
+        <div class="row">
+            {{#each products}}
+            <div class="col-md-3 mb-2 mt-2">
+                <div class="card">
+                    <img src="/product-images/{{this._id}}.jpg" class="card-img-top"
+                        alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="height: 25px;">{{this.Product_Name}}</h5>
+                        <h5 class="card-title" style="height: 25px;">Rs {{this.Product_Price}}</h5>
+                        <p class="card-text " style="height: 30px;" >{{this.Product_Description}}</p>
+                    </div>
+                    
+                    {{!-- we can use card footer or card ,card footer gives border of footer card gives no background of footer --}}
+                    <div class="card-footer d-flex justify-content-end"> 
+                    {{#if ../user}}
+                        <button onclick="addToCart('{{this._id}}')" class="btn w-100 h-100 btn-primary fw-semibold">A d d To Cart</button>
+                    {{else}}
+                     <a href="/cart" class="btn w-100 h-100 btn-primary fw-semibold">Add To Cart</a>
+                    {{/if}}
+                    </div>
+                  
+                </div>
+            </div>
+            {{else}}
+            <h4 class="h4">No Products Found!!!</h4>
+            {{/each}}
+        </div>
+    </div>
+</section>

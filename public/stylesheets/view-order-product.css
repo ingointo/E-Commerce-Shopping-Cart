@@ -1,0 +1,12 @@
+.card-img-top{
+    width: 100%; height: 14rem
+}
+.card{
+    width: 18rem; height: 22rem
+}
+.card-title{
+    height: 25px;
+}
+.card-text{
+    height: 30px;
+}

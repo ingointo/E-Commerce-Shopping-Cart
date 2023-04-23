@@ -1,0 +1,7 @@
+.text-style {
+    
+    font-family: 'Courier New', Courier, monospace; font-weight: bolder;
+}
+.nav-col{
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+}

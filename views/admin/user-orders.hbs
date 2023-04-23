@@ -1,0 +1,44 @@
+<style>
+  body {
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgb(3 3 4), #1012c6)
+  }
+</style>
+
+<section class="vh-100" style="font-family: 'Courier New', Courier, monospace">
+  {{#each orders}}
+  <div class="container py-2 col-12">
+    <div class="row">
+      <div class="card w-100" style="border-radius: 16px; width: 85rem; height: 21rem;">
+        <div class="card-header p-4">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <p class="text-muted mb-2"> Order ID <span class="fw-bold text-body">{{this._id}}</span></p>
+              <p class="text-muted mb-0"> Place On <span class="fw-bold text-body">{{this.date}} {{this.month}}
+                  {{this.year}} </span> </p>
+            </div>
+            <div>
+              <h6 class="mb-0"> <a href="/admin" class="btn btn-primary">Go Back</a> </h6>
+              <!-- Button trigger modal -->
+            </div>
+          </div>
+        </div>
+        <div class="card-body p-4">
+          <div class="d-flex flex-row mb-1 pb-2">
+            <div class="flex-fill">
+              <h5 class="bold"></h5>
+             
+              <h4 class="mb-2 fw-bold"> $ {{this.totalAmount}} <span class="small text-muted"> via <span class="fw-bold">({{this.paymentMethod}})</span>
+                </span></h4>
+              <p class="text-muted">Tracking Name on: <span class=" fw-bold text-body">{{this.deliveryDetails.name}}</span></p>
+              <p class="text-muted">Tracking Address on: <span class="fw-bold text-body">{{this.deliveryDetails.address}}</span></p>
+              <p class="text-muted">Tracking Status on: <span class=" fw-bold text-body">{{this.status}} </span></p>
+              <p class="text-muted"> Place On <span class="fw-bold text-body">{{this.time}}</span> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</section>
